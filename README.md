@@ -1,2 +1,7 @@
 # vc4dis
-Disassembler for the VideoCore IV architecture based on the work of Herman Hermitage
+A simple disassembler for binaries that follow the VideoCore IV Architecture, providing output based on the work of @hermanhermitage. Instructions and data are decoded following the architecture described in [this document](https://github.com/hermanhermitage/videocoreiv/blob/master/videocoreiv.arch) and [this wiki page](https://github.com/hermanhermitage/videocoreiv/wiki/VideoCore-IV-Programmers-Manual).
+
+# Installation
+# Credits
+# LICENSE
+See LICENSE.md
