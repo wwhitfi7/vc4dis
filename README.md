@@ -4,4 +4,4 @@ A simple disassembler for binaries that follow the VideoCore IV Architecture, pr
 # Installation
 # Credits
 # LICENSE
-See LICENSE.md
+See LICENSE
