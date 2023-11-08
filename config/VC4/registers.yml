@@ -1,0 +1,37 @@
+---
+scalar_registers:
+  general_registers:
+    start_range: 0
+    end_range: 15
+  extended_registers:
+    start_range: 16
+    end_range: 24
+    aliases:
+      24: gp
+  special_purpose:
+    start_range: 25
+    end_range: 31
+    aliases:
+      25: sp
+      26: lr
+      28: esp
+      29: tp
+      30: sr
+      31: pc
+  pcontrol_registers:
+    start_range: 0
+    end_range: 31
+    aliases:
+      0: PRFPXCS
+      1: PRCANARY
+      10: PRPOWCTL
+      11: PRTIMCTL
+      12: PRCORTIM
+      13: PRSLPTIM
+      14: PROOWCNT
+      15: PRORCNT
+      16: PRSPINL
+    single_bit:
+      start_range: 16
+      end_range: 31
+...
