@@ -6,8 +6,15 @@ Thus, the disassembler needs to have some internal representation of instruction
 
 Yaml files describing an ISA require:
     1. The length or lengths of an instruction (VideoCore IV has 16, 32, 48, and 80 bit instructions)
-    2. The rules used to determine length of an instruction
-    3. The memory range and registers that may be affected
-    4. A regex pattern matching that instruction
+    2. A bitmask identifying the bits that determine instruction length, and the value to which they evaluate for that length
+    3. A record for each instruction specifying the:
+        - instruction name
+        - opcode bitmask
+        - opcode
+        - argument bitmasks
+        - arguments
 
 My current intent is to fully represnt 16, 32, and 48 bit scalar instructions. The VideoCore IV is also capable of 48 and 80 bit vector instructions - although I intend to recognize them, I do not intend to fully represnt them until I better understand them. The system will always fetch the minimum instruction length, and invalid instructions will be skipped but marked as data when applicable in order to continue searching for instructions in the blob.
+
+## Updates
+- 11/9/23: The decision has been made to change the representation of an instruction to a bitmasks identifying the opcode, along with bitmasks that identify the values of each argument
