@@ -1,0 +1,42 @@
+lengths:
+  - 16
+  - 32
+  - 48
+  - 80
+
+scalar_16:
+  ident: 0
+  instructions:
+    - instr:
+      encoding: 0000000000000000
+      name: bkpt
+    - instr:
+      encoding: 0000000000000001
+      name: nop
+    - instr:
+      encoding: 0000000000000010
+      name: sleep
+    - instr:
+      encoding: 0000000000000011
+      name: user
+    - instr:
+      encoding: 0000000000000100
+      name: ei
+    - instr:
+      encoding: 0000000000000101
+      name: di
+    - instr:
+      encoding: 0000000000000110
+      name: cbclr 
+    
+scalar_32:
+  ident: 1
+
+scalar_48:
+  ident: 1110
+
+vector_48:
+  ident: 11110
+
+vector_80:
+  ident: 11111
