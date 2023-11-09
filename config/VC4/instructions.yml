@@ -4,39 +4,139 @@ lengths:
   - 48
   - 80
 
-scalar_16:
-  ident: 0
+scalar16:
+  mask: "0x80" # First byte mask determines instruction length if B&mask = 0
   instructions:
-    - instr:
-      encoding: 0000000000000000
+    -
+      instruction: "0x0000"
       name: bkpt
-    - instr:
-      encoding: 0000000000000001
+    -
+      instruction: "0x0001"
       name: nop
-    - instr:
-      encoding: 0000000000000010
+    -
+      instruction: "0x0002"
       name: sleep
-    - instr:
-      encoding: 0000000000000011
+    - instruction: "0x0003"
       name: user
-    - instr:
-      encoding: 0000000000000100
+    -
+      instruction: "0x0004"
       name: ei
-    - instr:
-      encoding: 0000000000000101
+    -
+      instruction: "0x0005"
       name: di
-    - instr:
-      encoding: 0000000000000110
-      name: cbclr 
-    
-scalar_32:
-  ident: 1
-
-scalar_48:
-  ident: 1110
-
-vector_48:
-  ident: 11110
-
-vector_80:
-  ident: 11111
+    - 
+      instruction: "0x0006"
+      name: cbclr
+    - 
+      instruction: "0x0007"
+      name: cbadd1
+    -
+      instruction: "0x0008"
+      name: cbadd2
+    - 
+      instruction: "0x0009"
+      name: cbadd3
+    - 
+      instruction: "0x000A"
+      name: rti
+    - 
+      instruction:
+        start: "0x0020"
+        end: "0x003F"
+      name: swi_rd
+      args:
+        rd: 5
+    -
+      instruction:
+        start: "0x0040"
+        end: "0x005F"
+      name: b_rd
+      args:
+        rd: 5
+    -
+      instruction:
+        start: "0x0060"
+        end: "0x007F"
+      name: bl_rd
+      args:
+        rd: 5
+    - 
+      instruction:
+        start: "0x0080"
+        end: "0x008F"
+      name: switch.b_rd
+      args:
+        rd: 4
+    -
+      instruction:
+        start: "0x00A0"
+        end: "0x00AF"
+      name: switch_rd
+      args:
+        rd: 4
+    -
+      instruction:
+        start: "0x00E0"
+        end: "0x00FF"
+      name: version
+      args:
+        rd: 5
+    -
+      instruction:
+        start: "0x01B0"
+        end: "0x01FF"
+      name: swi_u
+      args:
+        u: 6
+    -
+      instruction:
+        start: "0x0200"
+        end: "0x027F"
+      name: ldm_rb-rm
+      args:
+        rb: 2
+        rm: 5
+    -
+      instruction:
+        start: "0x0280"
+        end: "0x02FF"
+      name: stm_rb-rm
+      args:
+        rb: 2
+        rm: 5
+    -
+      instruction:
+        start: "0x0300"
+        end: "0x037F"
+      name: ldm_rb-rm_pc
+      args:
+        rb: 2
+        rm: 5
+    -
+      instruction:
+        start: "0x0380"
+        end: "0x03FF"
+      name: stm_rb-rm_lr
+      args:
+        rb: 2
+        rm: 5
+    -
+      instruction:
+        start: "0x0400"
+        end: "0x05FF"
+      name: ld_rd_spr
+      args:
+        offset: 5
+        rd: 4
+    -
+      instruction:
+        start: "0x0600"
+        end: "0x07FF"
+      name: st_rd_spr
+      args:
+        offset: 5
+        rd: 4
+scalar32:
+scalar48:
+vector48:
+vector80:
