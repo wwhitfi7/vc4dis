@@ -1,0 +1,193 @@
+lengths:
+  - 16
+  - 32
+  - 48
+  - 80
+
+scalar16:
+  ident_bytemask: "0x80"
+  ident_val: "0x00"
+  length: 16
+  instructions:
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0000"
+      name: bkpt
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0001"
+      name: nop
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0002"
+      name: sleep
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0003"
+      name: user
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0004"
+      name: ei
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0005"
+      name: di
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0006"
+      name: cbclr
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0007"
+      name: cbadd1
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0008"
+      name: cbadd2
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x0009"
+      name: cbadd3
+    -
+      opcode_mask: "0xFFFF"
+      opcode_eval: "0x000A"
+      name: rti
+    -
+      opcode_mask: "0xFFE0"
+      opcode_eval: "0x0020"
+      name: swi_rd
+      arguments:
+        -
+          name: rd
+          type: reg_ref
+          bitmask: "0x001F"
+    -
+      opcode_mask: "0xFFE0"
+      opcode_eval: "0x0040"
+      name: b_rd
+      arguments:
+        -
+          name: rd
+          type: reg_ref
+          bitmask: "0x001F"
+    -
+      opcode_mask: "0xFFE0"
+      opcode_eval: "0x0060"
+      name: bl_rd
+      arguments:
+        -
+          name: rd
+          type: reg_ref
+          bitmask: "0x01F"
+    -
+      opcode_mask: "0xFFF0"
+      opcode_eval: "0x0080"
+      name: switch.b_rd
+      arguments:
+        -
+          name: rd
+          type: reg_ref
+          bitmask: "0x000F"
+    -
+      opcode_mask: "0xFFF0"
+      opcode_eval: "0x00A0"
+      name: switch_rd
+      arguments:
+        -
+          name: rd
+          type: reg_ref
+          bitmask: "0x000F"
+    -
+      opcode_mask: "0xFFE0"
+      opcode_eval: "0x00E0"
+      name: version
+      arguments:
+        -
+          name: rd
+          type: reg_ref
+          bitmask: "0x001F"
+    -
+      opcode_mask: "0xFFC0"
+      opcode_eval: "0x01C0"
+      name: swi_u
+      arguments:
+        -
+          name: uu
+          type: immediate
+          bitmask: "0x003F"
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+    -
+      opcode_mask: "0xFF"
+      opcode_eval: "0x00"
+      name: bkpt
+
+
+
+
+scalar32:
+  ident_bytemask: "0x80"
+  ident_val: "0x80"
+
+scalar48:
+  ident_bytemask: "0xF0"
+  ident_val: "0xE0"
+
+vector48:
+  ident_bytemask: "0xF8"
+  ident_val: "0xF0"
+
+vector80:
+  ident_bytemask: "0xF8"
+  ident_val: "0xF8"
