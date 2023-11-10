@@ -1,4 +1,4 @@
-#Instruction Set Architecture Representation
+# Instruction Set Architecture Representation
 ## Background
 The Instruction Set of a processor is the set of commands that can be given to that processor in order to accomplish some work with it. These commands can accomplish various tasks like loading bytes into registers from memroy, adding them, performing more complex operations on them, etc. In order to disassemble a program from a binary into a human-readable assembly language, it's important for the disassembler to actually know the instructions the processor is capable of and create instructions using them. Although I was tempted to hardcode the ISA of the VideoCore IV GPU (since that's primarily what I intend to dissassemble programs for), I instead decided to make this disassembler more useful in the hopes that it can be reused for an arbitrary future processor.
 ## Representation
