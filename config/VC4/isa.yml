@@ -113,68 +113,155 @@ scalar16:
       name: swi_u
       arguments:
         -
-          name: uu
+          name: u
           type: immediate
           bitmask: "0x003F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xFF80"
+      opcode_eval: "0x0200"
+      name: ldm_rb-rm_sppl
+      arguments:
+        -
+          name: b
+          type: reg_ref_btable
+          bitmask: "0x0060"
+          rshift: 5
+        -
+          name: m
+          type: reg_ref_mb_indirect
+          bitmask: "0x001F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xFF80"
+      opcode_eval: "0x0280"
+      name: stm_rb-rm_spmi
+      arguments:
+        -
+          name: b
+          type: reg_ref_btable
+          bitmask: "0x0060"
+          rshift: 5
+        -
+          name: m
+          type: reg_ref_mb_indirect
+          bitmask: "0x001F"       
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xFF80"
+      opcode_eval: "0x0300"
+      name: ldm_rb-rm_pc_sppl
+      arguments:
+        -
+          name: b
+          type: reg_ref_btable
+          bitmask: "0x0060"
+          rshift: 5
+        -
+          name: m
+          type: reg_ref_mb_indirect
+          bitmask: "0x001F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xFF80"
+      opcode_eval: "0x0380"
+      name: stm_rb-rm_lr_spmi
+      arguments:
+        -
+          name: b
+          type: reg_ref_btable
+          bitmask: "0x0060"
+          rshift: 5
+        -
+          name: m
+          type: reg_ref_mb_indirect
+          bitmask: "0x001F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xFE00"
+      opcode_eval: "0x0400"
+      name: ld_rd_sprel
+      arguments:
+        -
+          name: o
+          type: immediate
+          bitmask: "0x01F0"
+          rshift: 4
+        -
+          name: d
+          type: reg_ref
+          bitmask: "0x000F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xFE00"
+      opcode_eval: "0x0600"
+      name: st_rd_sprel
+      arguments:
+        -
+          name: o
+          type: immediate
+          bitmask: "0x01F0"
+          rshift: 4
+        -
+          name: d
+          type: reg_ref
+          bitmask: "0x000F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF900"
+      opcode_eval: "0x0800"
+      name: ld_ws
+      arguments:
+        -
+          name: w
+          type: width_specifier
+          bitmask: "0x0600"
+          rshift: 9
+        -
+          name: s
+          type: reg_ref_m
+          bitmask: "0x00F0"
+          rshift: 4
+        -
+          name: d
+          type: reg_ref
+          bitmask: "0x000F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF900"
+      opcode_eval: "0x0900"
+      name: st_ws
+      arguments:
+        -
+          name: w
+          type: width_specifier
+          bitmask: "0x0600"
+          rshift: 9
+        -
+          name: s
+          type: reg_ref_m
+          bitmask: "0x00F0"
+          rshift: 4
+        -
+          name: d
+          type: reg_ref
+          bitmask: "0x000F"
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF800"
+      opcode_eval: "0x1000"
+      name: add_rd_sp_o
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF800"
+      opcode_eval: "0x1800"
+      name: branch_condition
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF000"
+      opcode_eval: "0x2000"
+      name: ld_rd_rs_u_ptr
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF000"
+      opcode_eval: "0x3000"
+      name: st_rd_rs_u_ptr
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
+      opcode_mask: "0xF000"
+      opcode_eval: "0x4000"
+      name: rd_ra_op
     -
-      opcode_mask: "0xFF"
-      opcode_eval: "0x00"
-      name: bkpt
-
-
-
+      opcode_mask: "0xF000"
+      opcode_eval: "0x6000"
+      name: rd_u_op
 
 scalar32:
   ident_bytemask: "0x80"
