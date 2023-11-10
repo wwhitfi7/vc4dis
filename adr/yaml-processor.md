@@ -1,4 +1,4 @@
-#Yaml Processor
+# Yaml Processor
 
 ## Background Information
 For extensibility and easy modification, the architecture this disassembler targets is completely defined as a set of instructions and register definitions in config/ARCH. This is great, but those files require parsing to be usable. Determine whether or not to use a parsing library, or roll our own.
