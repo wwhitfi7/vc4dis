@@ -266,7 +266,204 @@ scalar16:
 scalar32:
   ident_bytemask: "0x80"
   ident_val: "0x80"
-
+  length: 32
+  instructions:
+    -
+      opcode_mask: "0xF000C000"
+      opcode_eval: "0x80000000"
+      name: add_cmp_branch_condition
+      arguments:
+    -
+      opcode_mask: "0xF000C000"
+      opcode_eval: "0x80004000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xF000C000"
+      opcode_eval: "0x80008000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xF000C000"
+      opcode_eval: "0x8000C000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xF0800000"
+      opcode_eval: "0x90000000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xF0800000"
+      opcode_eval: "0x90800000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xFF200060"
+      opcode_eval: "0xA0000000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xFF200060"
+      opcode_eval: "0xA0200000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xFE200000"
+      opcode_eval: "0xA2000000"
+      name:
+      arguments:
+    -
+      opcode_mask: "0xFE200000"
+      opcode_eval: "0xA2200000"
+      name:
+      arguments:
+    -
+      opcode_mask: 
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+    -
+      opcode_mask:
+      opcode_eval:
+      name:
+      arguments:
+  
 scalar48:
   ident_bytemask: "0xF0"
   ident_val: "0xE0"
