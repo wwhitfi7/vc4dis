@@ -10,3 +10,6 @@ Pros:
 Cons:
 - Static, altering instruction set requires recompile
 - Harder to target more than one instruction set
+
+## Addendum 1:
+Instead of using C++ headers compiled into the program, the program could instead load a dynamic shared library. For example, we could load in a library that supports a specific architecture, and other architectures supported by the program could be implemented as their own shared library with the appropriate functions and data types to support that architecture. So long as any shared library conforms to an expected interface with the larger program, it should be possible to represent most instructions and their arguments using a library instead of a YAML file, OR direct compilation/hardcoding :D.
