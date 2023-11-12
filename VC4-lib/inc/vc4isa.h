@@ -40,12 +40,10 @@ enum instruction_type {
         SCALAR48,
         VECTOR48,
         VECTOR80,
-        DATA_BYTE
 };
 
 struct instruction_node {
         unsigned int address;
-
 };
 
 // Get the enumerated instruction type of the next instruction
