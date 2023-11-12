@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/bubba-2/Projects/vc4dis",
-  "command": "/usr/bin/cc  -I/VC4-isa/inc  -o CMakeFiles/VC4-isa.dir/0-next_instruction_is.o -c /home/bubba-2/Projects/vc4dis/VC4-lib/src/0-next_instruction_is.c",
-  "file": "/home/bubba-2/Projects/vc4dis/VC4-lib/src/0-next_instruction_is.c"
-}
-]
