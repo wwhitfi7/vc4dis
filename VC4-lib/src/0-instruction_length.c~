@@ -5,20 +5,20 @@ unsigned int next_instruction_is(unsigned char* input)
         unsigned char val = *input & 0xF8 ;
         switch (val) {
                 case 0xF8:
-                    return 10;
+                    return 80;
                 case 0xF0:
-                    return 6;
+                    return 48;
         }
         val = val & 0xF0;
         switch (val) {
                 case 0xE0:
-                    return 6;
+                    return 48;
         }
         val = val & 0x80;
         switch (val) {
                 case 0x80:
-                    return 4;
+                    return 32;
                 case 0x00:
-                    return 2;
+                    return 16;
         }
 }

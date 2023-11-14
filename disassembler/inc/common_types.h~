@@ -1,5 +1,5 @@
 /*
- * VideoCore IV Instruction Set Architecture Library
+ * Disassembler Common Types
  * For Use With VC4Dis (Name Pending)
  * 
  * MIT License
@@ -25,39 +25,30 @@
  * SOFTWARE.
 */
 
-#ifndef vc4isa_libh
-#define vc4isa_libh
+#ifndef disassembler_common_types
+#define diassembler_common_types
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <cstdbool>
-#include "common_types.h"
-
-typedef unsigned char byte;
-
-// Structure defining the address where the instruction came from, the
-// textual name, actual contents, and the length of the contents, as well
-// as the arguments contained by the text`
-struct instuction_node {
-    unsigned int address;
-    char[] name;
-    byte[] content;
-    unsigned int content_length;
-
-
+enum instruction_types {
+    DATA=0,
+    MATH_OP=1,
+    LOGIC_OP=1,
+    MEMORY_OP,
+    COND_KNOWN_BRANCH,
+    IMMED_KNOWN_BRANCH,
+    COND_COMPUTED_BRANCH,
+    IMMED_COMPUTED_BRANCH,
+    INTERRUPT,
+    FLOAT_OP,
 }
 
-// Get the number of bytes in the next instruction
-unsigned int instruction_length(unsigned char* input);
-
-// Get the instruction node of the instruction being read in
-struct instruction_node* next_instruction(unsigned char* input, unsigned int instruction_size);
+typedef enum instruction_types itypes;
 
 
 #ifdef __cplusplus
 }
 #endif
-
 #endif
