@@ -32,22 +32,21 @@
 extern "C" {
 #endif
 
-#include <cstdbool>
-#include "common_types.h"
+#include <stdbool.h>
+#include "common.h"
 
 typedef unsigned char byte;
 
 // Structure defining the address where the instruction came from, the
 // textual name, actual contents, and the length of the contents, as well
 // as the arguments contained by the text`
-struct instuction_node {
+struct instruction_node {
     unsigned int address;
-    char[] name;
-    byte[] content;
+    // The actual name is fixed
+    char *name;
+    byte *content;
     unsigned int content_length;
-
-
-}
+};
 
 // Get the number of bytes in the next instruction
 unsigned int instruction_length(unsigned char* input);
