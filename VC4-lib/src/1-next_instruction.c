@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
 #include "vc4isa.h"
 
 // Forward definition of functions to populate instruction_node based on input
@@ -45,9 +47,58 @@ struct instruction_node* next_instruction(byte* input, unsigned int instruction_
 }
 
 
-
+/* This function takes a pointer to an instruction_node and an array of input
+ * bytes whose length is determined elsewhere in the library. It's not intended
+ * for use outside of this library because there's no other way to determine w/
+ * absolute certainty that the pointer to a byte[6] actually points to 6 bytes
+ * in memory.
+ *
+ * Based on the value of the bytes given as input, this function modifies the
+ * provided instruction_node's name, value, content, and eventually argument
+ * nodes */
 void scalar48_lookup(struct instruction_node* process, byte* input) {
-    unsigned short i_hword;
-    unsigned int d_word;
+    uint16_t i_hword;
+    uint32_t d_word;
+
+    // copy first 2 bytes into instruction halfword variable, last 4 into
+    // data word variable
+    memcpy(&i_hword, input, 2);
+    memcpy(&d_word, (input+2), 4);
+
+    switch (i_hword) {
+    case 0xE000:
+        process->name = "j";
+        // TODO - Append arguments
+    break;
+    case 0xE100:
+        process->name = "b";
+        // TODO - Append arguments
+    break;
+    case 0xE200:
+        process->name = "jl";
+        // TODO - Append arguments
+    break;
+    case 0xE300:
+        process->name = "bl";
+        // TODO - Append arguments
+    break;
+    }
+
+    if ((i_hword & 0xFFE0) == 0xE500) {
+         process->name = "add";
+    } 
+
+    switch (i_hword & 0xFF00) {
+    case 0xE600:
+        process->name = "add";
+    break;
+    case 0xE700:
+    break;
+    }
+    
+    memcpy(process->content, input, 6);
+    process->content_length = 6;
+
+
     return;
 }

@@ -33,9 +33,10 @@ extern "C" {
 #endif
 
 #include <stdbool.h>
+#include <stdint.h>
 #include "common.h"
 
-typedef unsigned char byte;
+typedef uint8_t byte;
 
 // Structure defining the address where the instruction came from, the
 // textual name, actual contents, and the length of the contents, as well
