@@ -90,9 +90,14 @@ void scalar48_lookup(struct instruction_node* process, byte* input) {
 
     switch (i_hword & 0xFF00) {
     case 0xE600:
-        process->name = "add";
+
     break;
     case 0xE700:
+        if (i_hword & 0x0020) {
+            process->name = "st";    
+        } else {
+            process->name = "ld";    
+        }
     break;
     }
     
