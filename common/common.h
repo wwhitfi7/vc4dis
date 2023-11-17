@@ -26,11 +26,15 @@
 */
 
 #ifndef disassembler_common_types
-#define diassembler_common_types
+#define disassembler_common_types
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include <stdint.h>
+
+typedef uint8_t byte;
 
 enum instruction_types {
     DATA=0,
@@ -44,8 +48,30 @@ enum instruction_types {
     INTERRUPT,
     FLOAT_OP,
 };
-
 typedef enum instruction_types itypes;
+
+enum argument_types {
+    CONDITION,
+    OPERATION,
+    FLOAT_OPERATION,
+    DATA_WIDTH,
+    REGISTER_REF,
+    COMPUTED_OFFSET_2X,
+    COMPUTED_OFFSET_4X,
+    OFFSET_DIRECT,
+    IMMEDIATE,
+
+};
+typedef enum argument_types atypes;
+
+struct argument {
+    atypes type;
+    byte* content;
+};
+
+typedef struct argument argument;
+
+
 
 
 #ifdef __cplusplus

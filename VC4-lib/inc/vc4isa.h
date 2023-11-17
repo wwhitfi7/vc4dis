@@ -36,7 +36,6 @@ extern "C" {
 #include <stdint.h>
 #include "common.h"
 
-typedef uint8_t byte;
 
 // Structure defining the address where the instruction came from, the
 // textual name, actual contents, and the length of the contents, as well
@@ -47,6 +46,7 @@ struct instruction_node {
     char *name;
     byte *content;
     unsigned int content_length;
+    argument *arg;
 };
 
 // Get the number of bytes in the next instruction
