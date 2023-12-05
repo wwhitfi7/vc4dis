@@ -3,5 +3,5 @@ project(DisassemblerGlobal)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_subdirectory(VC4-lib)
+add_subdirectory(disassembler)
 
