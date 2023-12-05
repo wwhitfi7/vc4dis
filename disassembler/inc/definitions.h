@@ -69,19 +69,33 @@ enum instruction_type {
     vector_op
 };
 
+enum arg_type {
+    condition_code,
+    arim_log_code_4,
+    arim_log_code_5,
+    arim_log_code,
+    register_ref,
+    width_code,
+    immediate,
+};
+
 // Typedefs here
 typedef enum instruction_type instruction_type;
+typedef enum arg_type arg_type;
 typedef struct instruction instruction;
 typedef struct arg arg;
 
 struct arg {
-
+    arg_type type;
+    char *name; // Null-terminated c-string naming the argument
 };
 
 // Struct defs here
 struct instruction {
     instruction_type type;
+    unsigned int content_len;
     uint8_t *contents; // location of instruction in source binary's buffer
     char *name; // Null-terminated c-string naming the instruction
+    unsigned int arg_len;
     arg *args; // Array of args
 };
