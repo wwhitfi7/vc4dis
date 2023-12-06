@@ -25,7 +25,7 @@ SOFTWARE.
 */
 
 // Includes
-#include <cstdint>
+#include <stdint.h>
 
 // Provides definitions of common data types in this program - instructions,
 // arguments, etc.
