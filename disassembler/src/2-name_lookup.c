@@ -70,12 +70,59 @@ char* lookup_name_16 (uint16_t first_hword) {
     // Next, check the instruction against the first 9 bits
     switch (first_hword & stack_registers_mask) {
     case ldm_reg:
+        return "ldm";
         break;
     case stm_reg:
+        return "stm";
         break;
     case ldm_reg_pc:
+        return "ldm_pc";
         break;
     case stm_reg_pc:
+        return "stm_pc";
+        break;
+    }
+    // Next, check the instruction against the first 5 and 8th bits
+    switch (first_hword & ld_st_short_mask) {
+    case ld_short:
+        return "ld";
+		break;
+    case st_short:
+        return "st";
+		break;
+    }
+    // Next, check the instruction against the first 7 bits
+    switch (first_hword & ld_st_short_offset_mask) {
+    case ld_short_offset:
+        return "ld";
+        break;
+    case st_short_offset:
+        return "st";
+        break;
+    }
+    // Next, check the first five bits 
+    switch (first_hword & br_cond_add_mask) {
+    case add_sp_offset:
+        return "add";
+        break;
+    case br_cond_short_offset:
+        return "br";
+        break;
+    }
+    switch (first_hword & ld_st_reg_offset_mask) {
+    case ld_reg_offset:
+        return "ld";
+        break;
+    case st_reg_offset:
+        return "st";
+        break;
+    }
+    switch (first_hword & short_arithlog_mask) {
+    case reg_reg_arithlog:
+        return "regreg_placeholder";
+        break;
+    case reg_imd_arithlog:
+        return "regimd_placeholder";
         break;
     }
     return "placeholder";
