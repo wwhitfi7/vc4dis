@@ -1,5 +1,6 @@
 #ifndef LANG_PATTERNS
 #define LANG_PATTERNS
+
 enum length_encoding {
     vector_mask = 0xF8,
     vector_10 = 0xF8,
@@ -10,4 +11,5 @@ enum length_encoding {
     scalar_4 = 0x80,
     scalar_2 = 0x00,
 };
+
 #endif

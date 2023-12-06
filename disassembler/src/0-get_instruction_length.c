@@ -1,4 +1,4 @@
-#include "../inc/instruction_lookup.h"
+#include "../inc/lookup.h"
 #include "../inc/lang_patterns.h"
 
 size_t get_content_length (uint8_t *contents)
