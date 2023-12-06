@@ -1,3 +1,6 @@
+#ifndef INSTRUCTION_LOOKUP
+#define INSTRUCTION_LOOKUP
+
 #include "definitions.h"
 #include <stddef.h>
 #include <stdint.h>
@@ -6,6 +9,6 @@
 size_t get_content_length (uint8_t *contents);
 
 // Get a full instruction's contents based on size
-instruction lookup_instruction_known_len (uint8_t *contents, size_t length);
+instruction lookup_instruction (uint8_t *contents, size_t length);
 
-
+#endif

@@ -24,6 +24,9 @@ SOFTWARE.
 
 */
 
+#ifndef DEFINITIONS
+#define DEFINITIONS
+
 // Includes
 #include <stdint.h>
 
@@ -99,3 +102,4 @@ struct instruction {
     unsigned int arg_len;
     arg *args; // Array of args
 };
+#endif
