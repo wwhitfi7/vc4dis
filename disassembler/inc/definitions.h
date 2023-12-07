@@ -46,7 +46,6 @@ enum arg_type {
 };
 
 // Typedefs here
-typedef enum instruction_type instruction_type;
 typedef enum arg_type arg_type;
 typedef struct instruction instruction;
 typedef struct arg arg;
