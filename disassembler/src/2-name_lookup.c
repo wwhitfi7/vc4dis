@@ -216,3 +216,45 @@ char* lookup_name_32 (uint16_t first_hword) {
     }
     return "placeholder";
 } 
+
+char* lookup_name48 (uint16_t first_hword) {
+    switch (first_hword & mem_mask_48b_full) {
+        case jump_immed48:
+            return "j";
+            break;
+        case branch_offset48:
+            return "b";
+            break;
+        case jump_long_immed48:
+            return "jl";
+            break;
+        case branch_long_offset48:
+            return "bl";
+            break;
+    }
+    if ((first_hword & mem_mask_48b_add) == add_reg_pc_offset48)
+        return "add";
+    switch (first_hword & mem_mask_48b_ldst) {
+        case ld_reg_offset48:
+			return "ld";
+			break;
+        case st_reg_offset48:
+			return "st";
+			break;
+        case ld_reg_pc_offset48:
+			return "ld";
+			break;
+        case st_reg_pc_offset48:
+			return "st";
+			break;
+    }
+    switch (first_hword & arithlog_mask_48b) {
+        case arithlog_op_48b:
+            return "arithlog_placeholder_48b";
+            break;
+        case arithlog_add_48b:
+            return "add";
+            break;
+    }
+    return "placeholder";
+}
